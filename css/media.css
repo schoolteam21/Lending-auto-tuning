@@ -1,0 +1,236 @@
+/*1601 - 1920*/
+@media screen and (max-width: 1920px){
+
+}
+/*1369 - 1600*/
+@media screen and (max-width: 1600px){
+	
+}
+/*961 - 1368*/
+@media screen and (max-width: 1368px){
+	.section-2__example_pic {
+    height: 285px;
+    width: 450px;
+	}
+	.section-2__example_wrapper {
+    width: 80%;
+    margin: 5% 10%;
+	}
+	.section-2__works .section-2__example_wrapper:nth-child(3){
+	margin-top: -5%;
+	}
+	.section-1__about_prev_img {
+    margin-top: 60px;
+	}
+}
+/*769 - 960*/
+@media screen and (max-width: 960px){
+	.section-1__wrapper{
+		flex-direction: column;
+		padding-top: 30px;
+	}
+	.section-1__about_prev_img{
+		margin-left: -50px;
+	}
+	.navigation{
+		display: none;
+	}
+	.section-2__works .section-2__example_wrapper:nth-child(3){
+	margin-top: -8%;
+	}
+	.section-2__example_pic{
+		width: 300px;
+		height: 200px;
+	}
+	.section-3__services_accordion{
+		width: 100%;
+	}
+	.contact__elem{
+		display: block;
+		position: relative;
+		margin-right: 50px;
+		min-height: 200px;
+	}
+	.contact__elem:first-child{
+		margin-top: 100px;
+	}
+	.section-4__contact_wrapper{
+		height: 1050px;
+	}
+	.section-4__contact_main{
+		min-height: 800px;
+		align-items: center;
+		flex-direction: column;
+	}
+	
+}
+/*481 - 768*/
+@media screen and (max-width: 768px){
+	.section-1__about_prev_img{
+		min-width: 475px;
+		margin-left: -10px;
+	}
+	.section-1__about_prev_img__pic1{
+		width: 205px;
+		height: 300px;
+		left: 5%;
+	}
+	.section-1__about_prev_img__pic2{
+		width: 205px;
+		height: 300px;
+		left: 52.5%;
+		top: 0;
+	}
+	.section-1__about_prev_img__pic3{
+		width: 430px;
+		top: 52%;
+		left: 5%;
+	}
+
+	.section-1__about__info{
+		width: 450px;
+	}
+	.section-2__works_wrapper{
+		margin-top: 10%;
+	}
+	
+	.navigation{
+		display: none;
+	}
+	.section-2__example_wrapper{
+		height: 290px;
+	}
+	.section-2__example{
+		height: 250px;
+	}
+	.section-2__example_pic{
+		width: 200px;
+		height: 140px;
+	}
+	.section-3__services_accordion{
+		width: 100%;
+	}
+	.section-1__wrapper{
+		padding-top: 30px;
+	}
+	.contact__elem{
+		margin-top: 40px;
+		margin-right: 0;
+	}
+	.contact__elem:first-child{
+		margin-top: 50px;
+	}
+	.section-2__example_title{
+		font-size: 15px;
+	}
+	.section-2__example_description{
+		font-size: 10px;
+	}
+	.section-3__services-wrapper{
+		width: 70%
+	}
+	.accordeon-header{
+		font-size: 15px;
+	}
+	.accordeon-body li{
+		font-size: 10px;
+	}
+	.section-4__contact{
+		padding-top: 40px
+	}
+	.section-4__contact_main{
+		min-height: 300px;
+	}
+}
+/*320 - 480*/
+@media screen and (max-width: 480px){
+	.header__slide_title{
+		font-size: 20px;
+	}
+	.section-1__about{
+		height: 700px
+	}
+	.section-1__about .section-1__triangle{
+		margin-top: -50px;
+	}
+	.section-1__about__info{
+		margin-top: -10PX;
+		width: 80%;
+	}
+	.section-1__about__title, .section-1__about__description{
+		font-size: 0.8em;
+	}
+	.section-1__about_prev_img{
+		margin-left: 10px;
+		margin-top: 10px;
+	}
+	.section-1__about_prev_img__pic1{
+		width: 140px;
+		height: 200px;
+		left: 0%;
+	}
+	.section-1__about_prev_img__pic2{
+		width: 140px;
+		height: 200px;
+		left: 51%;
+		top: 0;
+	}
+	.section-1__about_prev_img__pic3{
+		width: 295px;
+		top: 52%;
+		left: 0%;
+	}
+	.section-1__wrapper{
+		height: 720px;
+	}
+	.section-2__works_wrapper{
+		padding-top: 25%;
+	}
+	.section__title{
+		width: 300px;
+	}
+	.section__title_title, .section__description{
+		font-size: 0.9em;
+	}
+	.section-1__about_prev_img{
+		height: 400px;
+	}
+	.section-2__example_wrapper{
+		flex-direction: column;
+		height: 550px;
+	}
+	.section-2__example{
+		display: flex;
+		flex-direction: column;
+		align-items: left;
+		justify-content: flex-start;
+		height: 700px;
+		width: 100%;
+	}
+	.section-2__example_title, .section-2__example_description{
+		width: 200px
+	}
+	.section-2__example_pic{
+		min-height:  120px;
+		width: 100%
+	}
+	.section-2__example_description{
+		width: 280px;
+	}
+	.section-4__contact_wrapper{
+		padding-top: 20%;
+		height: 900px;
+	}
+	.section-1__about_prev_img{
+		min-width: 300px;
+	}
+	.contact__elem_title, .contact__elem_description{
+		font-size: 0.9em;	
+	}
+	.accordeon-header::after{
+		font-size: 1.9em;
+		height: 25px;
+		width: 26px;
+		padding-left: 0;
+	}
+}

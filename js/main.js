@@ -15,24 +15,70 @@ let popup = document.querySelector('.popup__example');
 function fillingPopup(e){
 		popup.querySelector('.popup__slider').style.backgroundImage = popup.querySelector('.popup__collection_item_1').style.backgroundImage = 'url(' + this.querySelector(".section-2__example_pic").getAttribute("data-img") + ')';
 		popup.querySelector('.popup__collection_item_2').style.backgroundImage = 'url(' + this.querySelector(".section-2__example_pic").getAttribute("data-img-hover") + ')';
-			
-		
+		popup.querySelector('.popup__collection_item_1').setAttribute('data-url', 'url(' + this.querySelector(".section-2__example_pic").getAttribute("data-img") + ')')
+		popup.querySelector('.popup__collection_item_2').setAttribute('data-url', 'url(' + this.querySelector(".section-2__example_pic").getAttribute("data-img-hover") + ')')
+		popup.querySelector('.popup__slide_svipe_button_left').setAttribute('data-url', 'url(' + this.querySelector(".section-2__example_pic").getAttribute("data-img-hover") + ')')	
+		popup.querySelector('.popup__slide_svipe_button_right').setAttribute('data-url', 'url(' + this.querySelector(".section-2__example_pic").getAttribute("data-img") + ')')
+
+
 		let listArr = this.querySelector('.section-2__example_description').innerText.split(', ');
 		let strList = '<div class="popup__list_title">' + this.querySelector('.section-2__example_title').innerText + '</div>';
 		for(let i = 0; i < listArr.length; i++){
-			/*let li = document.createElement('LI');*/
-			
 			strList += '<li>' + listArr[i][0].toUpperCase() + listArr[i].slice(1) + '</li>';
-			/*li.innerHTML = listArr[i][0].toUpperCase() + listArr[i].slice(1);
-			.appendChild(li);*/
 		}
 		popup.querySelector('.popup__list').innerHTML = strList;
 		popup.style.display = 'flex';
+		document.body.style.overflow = 'hidden';
 }
 for (var i = 0; i < wrapperExample.length; i++) {
 	wrapperExample[i].addEventListener('click', fillingPopup);
 }
 function closePopup(e) {
-	(e.target.className == 'popup__close')?popup.style.display = 'none' : null;
+	if(e.target.className == 'popup__close' || e.target.className == "popup__close_x"){	
+		let collect = this.querySelectorAll('.popup__collection_item');
+		for (var i = 0; i < collect.length; i++) {
+			(collect[i].classList.contains('active_slide'))?collect[i].classList.remove('active_slide'):0;
+		}
+		collect[0].classList.add('active_slide');
+		popup.style.display = 'none';
+		document.body.style.overflow = 'scroll';
+		this.querySelector('.popup__slide_svipe_button_left').style.display = 'none';
+		this.querySelector('.popup__slide_svipe_button_right').style.display = 'block';
+	}
 }
-popup.addEventListener('click', closePopup)
+function slide(elem, scope){
+	let self = scope;
+		self.querySelector(".main_pic").style.backgroundImage = elem.getAttribute('data-url');
+		let collect = self.querySelectorAll('.popup__collection_item');
+		for (var i = 0; i < collect.length; i++) {
+			(collect[i].classList.contains('active_slide'))?collect[i].classList.remove('active_slide'):null;
+		}
+		elem.classList.add('active_slide');
+		if(parseInt(elem.className.match(/\d/i)[0], 10) == 2){
+			self.querySelector('.popup__slide_svipe_button_left').style.display = 'block';
+			self.querySelector('.popup__slide_svipe_button_right').style.display = 'none';
+		}else{
+			self.querySelector('.popup__slide_svipe_button_left').style.display = 'none';
+			self.querySelector('.popup__slide_svipe_button_right').style.display = 'block';
+		}
+	}
+
+function slider(e){
+	let target = e.target;
+	let className = target.classList;
+	let svipeElem;
+	if(className[0] == 'slide_svipe_button_right'){
+		svipeElem =	this.querySelector('.active_slide').nextElementSibling;
+	}
+	if(className[0] == 'slide_svipe_button_left'){
+		svipeElem = this.querySelector('.active_slide').previousElementSibling;
+	}
+	if((className[1] == 'popup__collection_item') && (!target.classList.contains('active_slide'))){ 
+		svipeElem = target;
+	}
+	slide(svipeElem, this)	
+}
+
+
+popup.addEventListener('click', closePopup);
+popup.addEventListener('click', slider);

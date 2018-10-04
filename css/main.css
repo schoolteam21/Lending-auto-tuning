@@ -114,6 +114,9 @@ html, body{
 	font-weight: 100;
 	text-align: center;
 }
+.slide_svipe_button:hover{
+	color: grey;
+}
 .header__slide_svipe_button_right{
 	position: absolute;
 	top: 34%;
@@ -255,21 +258,20 @@ html, body{
 	height: 40px;
 	line-height: 2.6;
 	left: 10px;
-	font-size: 0.9em;
+	font-size: 1em;
 	color: #3a3a3a;
 }
-.popup__close::after{
+.popup__close span{
 	display: inline-block;
-	content: '×';
 	position: absolute;
-	font-size: 45px;
+	font-size: 60px;
 	font-weight: 100;
 	line-height: 0;
 	top: 50%;
-	left: 101%;
+	right: -2%;
 	color: black
 }
-.popup__close:hover::after{
+.popup__close span:hover{
 	color: #3a3a3a;
 }
 .popup__img{
@@ -282,13 +284,18 @@ html, body{
 	margin-bottom: 0.5%;
 	background-repeat: no-repeat;
 	background-size: cover;
+	position: relative;
+	transition: all 0.3s;
 }
 .popup__slide_svipe_button_left{
+	display: none;
 	position: absolute;
 	top: 50%;
 }
 .popup__slide_svipe_button_right{
-
+	position: absolute;
+	top: 50%;
+	right: 0;
 }
 .popup__collection{
 	width: 100%;
@@ -299,6 +306,9 @@ html, body{
 	width: 15%;
 	height: 100%;
 	
+}
+.active_slide{
+	outline: 3px solid rgb(47, 48, 48);
 }
 .popup__collection_item_1{
 	background-size: cover;

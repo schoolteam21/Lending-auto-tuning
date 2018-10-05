@@ -83,10 +83,12 @@ function headerSlider(e){
 	if(e.target.classList[1] == 'header__slide_svipe_button_right'){
 		let activElem = this.querySelector('.active')
 		if(this.querySelector('.active').nextElementSibling != null){
+			this.querySelector('.header__slide_title').innerHTML = activElem.nextElementSibling.getAttribute('data-title');
 			this.querySelector('.header__slider').style.backgroundImage = activElem.nextElementSibling.getAttribute('data-url');
 			activElem.nextElementSibling.classList.add('active');
 			activElem.classList.remove('active');
 		}else{
+			this.querySelector('.header__slide_title').innerHTML = activElem.previousElementSibling.previousElementSibling.getAttribute('data-title');
 			this.querySelector('.header__slider').style.backgroundImage = activElem.previousElementSibling.previousElementSibling.getAttribute('data-url');
 			activElem.previousElementSibling.previousElementSibling.classList.add('active');
 			activElem.classList.remove('active');
@@ -96,10 +98,12 @@ function headerSlider(e){
 	if(e.target.classList[1] == 'header__slide_svipe_button_left'){
 		let activElem = this.querySelector('.active')
 		if(this.querySelector('.active').previousElementSibling != null){
+			this.querySelector('.header__slide_title').innerHTML = activElem.previousElementSibling.getAttribute('data-title');
 			this.querySelector('.header__slider').style.backgroundImage = activElem.previousElementSibling.getAttribute('data-url');
 			activElem.previousElementSibling.classList.add('active');
 			activElem.classList.remove('active');
 		}else{
+			this.querySelector('.header__slide_title').innerHTML = activElem.nextElementSibling.nextElementSibling.getAttribute('data-title');
 			this.querySelector('.header__slider').style.backgroundImage = activElem.nextElementSibling.nextElementSibling.getAttribute('data-url');
 			activElem.nextElementSibling.nextElementSibling.classList.add('active');
 			activElem.classList.remove('active');
